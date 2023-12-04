@@ -1,0 +1,63 @@
+{% load embed_video_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juice Recipes</title>
+    {% load static %}
+   
+    <link rel="stylesheet" href="{% static 'css/recipe.css' %}">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="category">
+            <aside>
+                <button class="category-button" id="backButton">Back to Categories</button>
+                <h1>JUICE RECIPES</h1>
+                <h3>SPECTRA MENU:</h3>
+                <ul>
+                    <li>Avocado Paratha</li>
+                    <li>Chole Bhature</li>
+                    <li>Egg Hopper</li>
+                    <li>Masala Omelette</li>
+                    <li>Oats Uttapam</li>
+                    <li>Quinoa Upma</li>
+                </ul>
+            </aside>
+        </div>
+
+        <!-- Add a search form -->
+        <div class="content">
+            <div class="search">
+                <form method="get" action="{% url 'juice_details' %}">
+                    <input type="text" name="search" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            <div class="row">
+                {% for images in image %}
+        
+                <div class="image">
+                        <img src="{{ images.image.url }}" >
+                        <div class="title">
+                            <h2>{{images.title }}</h2>
+                            <a href="{% url 'juice_view' images.id %}" class="btn">View</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+    </div>
+</body>
+<script>
+    const backButton = document.getElementById("backButton");
+    backButton.addEventListener("click", function() {
+        window.location.href = "/recipecategory"; // Replace with the actual URL of your original page
+    });
+</script>
+
+</html>

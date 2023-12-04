@@ -1,0 +1,81 @@
+{% load embed_video_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ image.title }}</title>
+    {% load static %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="main">
+        <div class="nav">
+            <div class="back">
+                <button class="left-arrow" id="backButton">&larr;</button>
+                <p>Sunrice to <span>Starlight</span></p>
+            </div>
+            <div class="list">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Recipe</a></li>
+                </ul>
+            </div>
+
+            <div class="addcard">
+                <button class="btn">Add Card</button>
+            </div>
+            
+        </div>
+        <div class="details">
+            <div class="image">
+                {% if image.image %}
+                    <img src="{{ image.image.url }}" alt="{{ image.name }}">
+                {% endif %}
+                <div class="heading">
+                    <h1>{{image.title }}</h1>
+                    <p>{{ image.description}}</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="ingredients">
+                    <h1>Ingredients:</h1>
+                    <h3>{{ image.ingredients|linebreaks }}</h3>
+                    <div class="serve">
+                        <h5><i class="fas fa-hamburger icon"></i> Yield: serves 2</h5>
+                        <h5><i class="fas fa-clock icon"></i> Cook Time: 30 minutes</h5>
+                        <h5><i class="fas fa-hourglass-start icon"></i> Prep Time: 40 minutes</h5>
+                    </div>
+                
+                </div>
+                <div class="instructions">
+                    <h1>Instructions:</h1>
+                    <p>{{ image.instructions|linebreaks }}</p>
+                </div>
+            </div>
+
+            
+    
+        </div>
+        <div class="video_section">
+            <h1>Recipe Video:</h1>
+            <hr>
+            {% load embed_video_tags %}
+            {% video image.video target=video %}
+            {% if video %}
+                <div class="embed-responsive">
+                    {{ video|safe }}
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+</body>
+</html>

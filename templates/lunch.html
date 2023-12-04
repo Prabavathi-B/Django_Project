@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch Recipes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/lunch.css' %}">
+
+</head>
+<body>
+  <div class="nav">
+    <button class="left-arrow" id="backButton">&larr;</button>
+    <p>Sunrice to <span>Starlight</span></p>
+  </div>
+
+  <h2>LUNCH</h2>
+
+  <div class="card-container">
+    <div class="card">
+      <img src="{% static 'images/6.jpg' %}"  alt="Vegetarian Profile">
+      <h1>VEG</h1>
+      <p>"Vegetarianism is a powerful way to improve your health, protect the environment, and feed the world."</p>
+      <p><button onclick="window.location.href='veg'">Dig in</button></p>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/7.jpg' %}"  alt="Non-Vegetarian Profile">
+      <h1>NON-VEG</h1>
+      <p>"Meat is a source of vital nutrients<br> that our bodies need to function optimally."</p>
+      <p><button onclick="window.location.href='non_veg'">Dig in</button></p>
+    </div>
+  </div>
+
+</body>
+<script>
+  backButton.addEventListener("click", function() {
+      window.location.href = "recipecategory"; 
+  });
+</script>
+</html>
