@@ -1,0 +1,147 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+}
+
+.category aside {
+    background-color: whitesmoke;
+    padding: 20px; 
+    width: 280px; 
+    height: 800px;
+}
+
+.category aside h1 {
+    color: green; 
+    font-size: 24px;
+    padding-top: 10px; 
+}
+
+
+.category aside h3 {
+    color: red; 
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 30px; 
+}
+
+.category aside ul {
+    margin-top: 10px; 
+}
+
+
+.category aside li {
+    color: black; 
+    font-size: 18px; 
+    margin-top: 15px; 
+}
+
+.category aside #backButton {
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 40px; 
+}
+
+
+.category aside #backButton:hover {
+    background-color: #0056b3; 
+}
+
+.content {
+    margin-top: 30px;
+}
+
+.search form {
+    display: flex;
+    
+}
+
+.search input[type="text"] {
+    padding: 10px;
+    width: 400px;
+    height: 30px; 
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    margin-left: 300px;
+}
+
+.search button {
+    width: 90px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-left: -100px; 
+    margin-top: 5px;
+}
+
+.search button:hover {
+    background-color: #2980b9;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; 
+
+}
+
+.image {
+    width: 290px;
+    margin-left: 35px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.image img {
+    width: 290px;
+    height: 210px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+}
+
+.title{
+    display: flex;
+}
+
+.image h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+
+.btn{
+    display: inline-block;
+    text-align: center;
+    margin: 13px auto; 
+    width: 80px;
+    background-color: #FF007F; 
+    color: #fff; 
+    text-decoration: none;
+    border-radius: 5px;
+    padding-top: 8px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+.title .btn:hover {
+    background-color: #FE46A5;
+}
+
